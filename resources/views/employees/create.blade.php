@@ -26,24 +26,21 @@
             <div class="col-md-6 offset-md-3 col-sm-12">
                 <fieldset style="border: 1px solid #ccc; border-radius:5%; padding: 5%;">
                 
-                {{ Form::open(['url'=> 'save']) }}
+                    {{ Form::open(['url'=> 'save']) }}
 
-                {{ Form::label('name', 'Name') }}
-                {{ Form::input('text', 'employee_name', '', ['class' => 'form-control', 'autofocus', 'placeholder' => 'Name', 'required' ])}}
-                <br>
-                {{ Form::label('salary', 'Salary') }}
-                {{ Form::input('text', 'employee_salary', '', ['class' => 'form-control', '', "placeholder" => "Salary", 'required' ])}}
-                <br>
-                {{ Form::label('age', 'Age') }}
-                {{ Form::input('number', 'employee_age', '', ['class' => 'form-control', '', "placeholder" => "Age", 'required', 'min' => 0, 'max' => 70 ])}}
-                <br>
-                {{ Form::label('img', 'Imagem') }}
-                {{ Form::input('file', 'profile_image', '', ['class' => 'form-control', '', "placeholder" => "Profile Image"])}}
+                    {{ Form::label('name', 'Name') }}
+                    {{ Form::input('text', 'name', '', ['class' => 'form-control', 'autofocus', 'placeholder' => 'Name', 'required' ])}}
+                    <br>
+                    {{ Form::label('salary', 'Salary') }}
+                    {{ Form::input('text', 'salary', '', ['class' => 'form-control', '', "placeholder" => "Salary", 'required' ])}}
+                    <br>
+                    {{ Form::label('age', 'Age') }}
+                    {{ Form::input('number', 'age', '', ['class' => 'form-control', '', "placeholder" => "Age", 'required', 'min' => 0, 'max' => 70 ])}}
+                    
+                    <br>
+                    {{ Form::submit('Save', ['class' => 'btn btn-primary col-12']) }}
 
-                <br>
-                {{ Form::submit('Save', ['class' => 'btn btn-primary col-12']) }}
-
-                {{ Form::close() }}
+                    {{ Form::close() }}                
 
                 </fieldset>
             </div>

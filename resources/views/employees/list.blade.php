@@ -12,41 +12,35 @@
     <div class="container">
         <br>
         <div class="row">
-            <div class="col-md-6 col-sm-12">
-               <h1>List of Employees</h1>
+            <div class="col-md-10 col-sm-12">
+               <h1>My Employees - Log</h1>
             </div>
             <div class="col-md-2 col-sm-12">
-                <a href="{{ url('/') }}" style="width:100%; margin-bottom: 1%;" class="btn btn-secondary float-right">Home</a>
-            </div>
-            <div class="col-md-2 col-sm-12">
-                <a href="{{ url('list') }}" style="width:100%; margin-bottom: 1%;" class="btn btn-info float-right">My Employees</a>
-            </div>
-            <div class="col-md-2 col-sm-12">
-                <a href="{{ url('create') }}" style="width:100%; margin-bottom: 1%;" class="btn btn-success float-right">New Employee</a>            
+                <a href="{{ url('employees') }}" style="width:100%; margin-bottom: 1%;" class="btn btn-secondary float-right">Back to List</a>
             </div>
         </div>
         <br>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12">            
                 <div class="table-responsive-sm table-responsive-md">
-                
+                    
                     <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Salary</th>
-                                <th scope="col">Age</th>
+                                <th scope="col">Date/Time</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
 
                             @foreach ($employees as $employee)
                                 <tr>
-                                    <th scope="row">{{ $employee->id }}</th>
-                                    <td>{{ $employee->employee_name }}</td>
-                                    <td>$ {{ $employee->employee_salary }}</td>
-                                    <td>{{ $employee->employee_age }}</td>
+                                    <th scope="row">{{ $employee->employee_id }}</th>
+                                    <td>{{ $employee->created_at }}</td>
+                                    <td>
+                                        <a href="employee/{{ $employee->employee_id }}">Show</a>
+                                    </td>
                                 </tr>
                             @endforeach
 
