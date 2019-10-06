@@ -13,7 +13,7 @@
         <br>
         <div class="row">
             <div class="col-md-10 col-sm-12">
-               <h1>Employee - </h1>
+               <h1>Employee</h1>
             </div>
             <div class="col-md-2 col-sm-12">
                 <a href="{{ url('list') }}" style="width:100%; margin-bottom: 1%;" class="btn btn-secondary float-right">Back</a>
@@ -24,27 +24,36 @@
             <div class="col-md-12">            
                 <div class="table-responsive-sm table-responsive-md">
                     
+                    @if($employee != null)
+
                     <table class="table table-hover">
-                        <thead>
+                        <tbody>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Salary</th>
-                                <th scope="col">Age</th>
-                                <th></th>
+                                <td>{{ $employee->id }}</td>
                             </tr>
-                        </thead>
-                        <tbody>
-
                             <tr>
-                                <td>{{ $employee->name }}</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <th scope="col">Name</th>
+                                <td>{{ $employee->employee_name }}</td>
                             </tr>
-                           
+                            <tr>
+                                <th scope="col">Salary</th>
+                                <td>{{ '$ ' . $employee->employee_salary }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="col">Age</th>
+                                <td>{{ $employee->employee_age }}</td>
+                            </tr>   
                         </tbody>
                     </table>
+
+                    @else
+
+                    <div class="alert alert-info">
+                        <h4>Sorry, employee not found at the base of our API.</h4>
+                    </div>
+
+                    @endif
 
                 </div>       
             </div>
