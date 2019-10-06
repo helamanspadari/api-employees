@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="{{ URL::asset('/css/app.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('/css/main.css') }}">
     <title>Employees</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
                <h1>My Employees - Log</h1>
             </div>
             <div class="col-md-2 col-sm-12">
-                <a href="{{ url('employees') }}" style="width:100%; margin-bottom: 1%;" class="btn btn-secondary float-right">Back to List</a>
+                <a href="{{ url('employees') }}" id="btn" class="btn btn-secondary float-right">Back to List</a>
             </div>
         </div>
         <br>

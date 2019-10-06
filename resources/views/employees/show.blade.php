@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="{{ URL::asset('/css/app.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('/css/main.css') }}">
     <title>Employees</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
                <h1>Employee</h1>
             </div>
             <div class="col-md-2 col-sm-12">
-                <a href="{{ url('list') }}" style="width:100%; margin-bottom: 1%;" class="btn btn-secondary float-right">Back</a>
+                <a href="{{ url('list') }}" id="btn" class="btn btn-secondary float-right">Back</a>
             </div>
         </div>
         <br>
@@ -26,32 +27,32 @@
                     
                     @if($employee != null)
 
-                    <table class="table table-hover">
-                        <tbody>
-                            <tr>
-                                <th scope="col">#</th>
-                                <td>{{ $employee->id }}</td>
-                            </tr>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <td>{{ $employee->employee_name }}</td>
-                            </tr>
-                            <tr>
-                                <th scope="col">Salary</th>
-                                <td>{{ '$ ' . $employee->employee_salary }}</td>
-                            </tr>
-                            <tr>
-                                <th scope="col">Age</th>
-                                <td>{{ $employee->employee_age }}</td>
-                            </tr>   
-                        </tbody>
-                    </table>
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <td>{{ $employee->id }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <td>{{ $employee->employee_name }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Salary</th>
+                                    <td>{{ '$ ' . $employee->employee_salary }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Age</th>
+                                    <td>{{ $employee->employee_age }}</td>
+                                </tr>   
+                            </tbody>
+                        </table>
 
                     @else
 
-                    <div class="alert alert-info">
-                        <h4>Sorry, employee not found at the base of our API.</h4>
-                    </div>
+                        <div class="alert alert-info">
+                            <h4>Sorry, employee not found at the base of our API.</h4>
+                        </div>
 
                     @endif
 

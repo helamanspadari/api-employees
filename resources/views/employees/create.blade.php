@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="{{ URL::asset('/css/app.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('/css/main.css') }}">
     <title>Create Employee</title>
 </head>
 <body>
@@ -18,13 +19,13 @@
                <h1>Create an Employee</h1>
             </div>
             <div class="col-md-2 col-sm-12">
-                <a href="{{ url('employees') }}" style="width:100%; margin-bottom: 1%;" class="btn btn-secondary float-right">List</a>
+                <a href="{{ url('employees') }}" id="btn" class="btn btn-secondary float-right">List</a>
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-md-6 offset-md-3 col-sm-12">
-                <fieldset style="border: 1px solid #ccc; border-radius:5%; padding: 5%;">
+                <fieldset class="fieldset">
                 
                     {{ Form::open(['url'=> 'save']) }}
 
